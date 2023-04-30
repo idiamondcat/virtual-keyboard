@@ -9,7 +9,7 @@ function createPageTemplate() {
             <h1 class="virtual-keyboard__title">RSS Virtual Keyboard</h1>
             <textarea class="virtual-keyboard__input-field" rows="7" cols="50"></textarea>
             <div class="virtual-keyboard__keyboard"></div>
-            <p class="virtual-keyboard__description">Keyboard was created in Windows OS</p>
+            <p class="virtual-keyboard__description">Keyboard was created in Windows OS </br> Switch language: <b>control left</b> + <b>alt left</b></p>
         </div>
     `;
 }

@@ -245,8 +245,13 @@ export default class Keyboard {
     if (this.currElem.evt.ctrlKey && this.currElem.evt.altKey) this.changeLanguage();
   }
 
+  addLang() {
+    if (localStorage.lang === 'rus') this.changeLanguage();
+  }
+
   init() {
     this.createKeyboardRows();
+    this.addLang();
     document.addEventListener('keydown', this.keydownHandler.bind(this));
     document.addEventListener('keyup', this.keyupHandler.bind(this));
     document.addEventListener('mousedown', this.mouseDownHandler.bind(this));
