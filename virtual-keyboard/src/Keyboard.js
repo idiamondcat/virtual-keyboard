@@ -69,7 +69,7 @@ export default class Keyboard {
     showCurrentLang();
     if (this.status.lang === 'rus') this.status.lang = 'eng';
     else this.status.lang = 'rus';
-    localStorage.setItem('lang', this.status.lang);
+    window.localStorage.setItem('lang', this.status.lang);
     showCurrentLang();
   }
 
@@ -246,7 +246,8 @@ export default class Keyboard {
   }
 
   addLang() {
-    if (localStorage.lang === 'rus') this.changeLanguage();
+    const currLang = window.localStorage.getItem('lang');
+    if (currLang === 'rus') this.changeLanguage();
   }
 
   init() {
