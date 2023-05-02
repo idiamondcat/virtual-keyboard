@@ -1,0 +1,141 @@
+@import 'fonts';
+@import 'variables';
+
+* {
+    box-sizing: border-box;
+}
+h1 {
+    margin: 0;
+}
+p {
+    margin: 0;
+}
+.page {
+    background-color: $main-background;
+}
+.container {
+    width: 875px;
+    margin: 0 auto;
+    padding: 40px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.virtual-keyboard {
+    & .virtual-keyboard__title {
+        margin: 0;
+        font: {
+            family: $keyboard-font;
+            weight: 600;
+            size: 3rem;
+        }
+        line-height: 1.4;
+        letter-spacing: 5.5px;
+        color: $main-font-color;
+        margin-bottom: 42px;
+    }
+    & .virtual-keyboard__input-field {
+        width: 80%;
+        height: 236px;
+        padding: 18px 20px;
+        background-color: $textarea-color;
+        border: none;
+        resize: none;
+        margin-bottom: 25px;
+        font: {
+            family: $regular-font;
+            weight: 300;
+            size: 1rem;
+        }
+        line-height: 1.6;
+        color: $textarea-font-color;
+        &:hover {
+            opacity: 0.7;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    & .virtual-keyboard__keyboard {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: -3px -3px 5px rgb(63, 63, 63) , 3px 3px 5px black;
+        margin-bottom: 30px;
+    }
+    & .virtual-keyboard__row {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 10px;
+    }
+    & .virtual-keyboard__key {
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        border-radius: 4px;
+        box-shadow: -3px -3px 5px rgb(150, 210, 217) , 3px 3px 5px black;
+        transition: all 0.3s ease-in;
+        &[data-elem-code="Space"] {
+            flex-grow: 1;
+        }
+        &[data-elem-code="ShiftRight"] {
+            width: 88px;
+        }
+        &[data-elem-code="ControlLeft"], &[data-elem-code="ControlRight"] {
+            width: 60px;
+        }
+        &[data-elem-code="ShiftRight"] {
+            width: 115px;
+        }
+        &[data-elem-code="ShiftLeft"] {
+            width: 85px;
+        }
+        &[data-elem-code="CapsLock"] {
+            width: 110px;
+        }
+        &[data-elem-code="Enter"] {
+            width: 90px;
+        }
+        &[data-elem-code="Backspace"] {
+            width: 100px;
+        }
+    }
+    & .virtual-keyboard__text {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font: {
+            family: $keyboard-font;
+            weight: 400;
+            size: 1rem;
+        }
+        color: $main-font-color;
+    }
+    & .virtual-keyboard__text--hidden {
+        display: none;
+    }
+    & .virtual-keyboard__key--active {
+        background-color: rgba(150, 210, 217, 1);
+        box-shadow: none;
+    }
+    & .virtual-keyboard__description {
+        font: {
+            family: $main-font;
+            weight: 400;
+            size: 1.313rem;
+        }
+        line-height: 1.6;
+        color: $main-font-color;
+    }
+}
