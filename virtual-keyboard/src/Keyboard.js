@@ -239,8 +239,10 @@ export default class Keyboard {
         default:
           break;
       }
-    } else {
+    } else if (this.currElem.elem) {
       addTextarea();
+    } else {
+      return;
     }
     if (this.currElem.evt.ctrlKey && this.currElem.evt.altKey) this.changeLanguage();
   }
